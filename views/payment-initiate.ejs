@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Complete Registration - Payment</title>
+</head>
+<body>
+    <h1>Complete Registration - Payment</h1>
+    <p>Please pay the registration fee to continue.</p>
+    <button id="pay-button">Pay Now</button>
+
+    <script src="https://js.paystack.co/v1/inline.js"></script>
+    <script>
+        document.getElementById('pay-button').addEventListener('click', function() {
+            let handler = PaystackPop.setup({
+                key: "<%= paystackKey %>", // Your public Paystack key
+                email: "<%= email %>",
+                amount: 2000 * 100, // Amount in kobo
+                callback: function(response) {
+                    // Call backend to save the student data
+                    fetch('/enrollment/confirm-payment', {
+                        method: 'POST',
+                        headers: {
+                            'Content-Type': 'application/json'
+                        },
+                        body: JSON.stringify({ 
+                            email: "<%= email %>",
+                            name: "Student Name",
+                            phone: "Student Phone"
+                        })
+                    })
+                    .then(res => res.json())
+                    .then(data => {
+                        if (data.success) {
+                            alert("Payment Successful! Please check your email.");
+                            window.location.href = '/login';
+                        } else {
+                            alert("Failed to complete registration. Please contact support.");
+                        }
+                    })
+                    .catch(err => console.error("Payment confirmation error:", err));
+                },
+                onClose: function() {
+                    alert("Transaction was not completed. Please try again.");
+                }
+            });
+            handler.openIframe();
+        });
+    </script>
+</body>
+</html>

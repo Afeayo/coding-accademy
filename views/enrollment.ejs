@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Enroll Now - Code Academy</title>
+    <link rel="stylesheet" href="/css/styles.css">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&family=Roboto:wght@400;700&display=swap"
+        rel="stylesheet">
+    <style>
+        body {
+            margin: 0;
+            font-family: 'Poppins', sans-serif;
+            background-color: #f3f4f6;
+            color: #333;
+        }
+
+        header {
+            background: #141527;
+            padding: 20px 50px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: fixed;
+            top: 0;
+            width: 100%;
+            z-index: 1000;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+        }
+
+        header h1 {
+            color: #fff;
+            font-size: 26px;
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            gap: 20px;
+        }
+
+        nav ul li a {
+            color: #fff;
+            text-decoration: none;
+            font-weight: 500;
+            padding: 10px 20px;
+            border-radius: 5px;
+            transition: background 0.3s ease;
+        }
+
+        nav ul li a:hover {
+            background-color: #ff5a5f;
+        }
+
+        .container {
+            margin-top: 120px;
+            padding: 40px 50px;
+        }
+
+        h2 {
+            font-size: 48px;
+            color: #333;
+            text-align: center;
+            margin-bottom: 50px;
+            font-weight: 600;
+        }
+
+        .form-container {
+            max-width: 600px;
+            background-color: white;
+            margin: 0 auto;
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.12);
+        }
+
+        .form-container form {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .form-container label {
+            font-weight: 500;
+            margin-bottom: 10px;
+            color: #333;
+        }
+
+        .form-container input,
+        .form-container select {
+            padding: 15px;
+            font-size: 16px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            margin-bottom: 20px;
+            transition: border-color 0.3s ease;
+        }
+
+        .form-container input:focus,
+        .form-container select:focus {
+            border-color: #ff5a5f;
+            outline: none;
+        }
+
+        .btn-primary {
+            background-color: #ff5a5f;
+            padding: 15px 35px;
+            border: none;
+            color: white;
+            font-size: 18px;
+            border-radius: 30px;
+            cursor: pointer;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            text-decoration: none;
+            margin-top: 20px;
+            display: inline-block;
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+        }
+
+        /* Footer */
+        footer {
+            background-color: #141527;
+            color: white;
+            padding: 40px 0;
+            text-align: center;
+        }
+
+        footer p {
+            font-size: 14px;
+            margin: 0;
+        }
+
+        /* Media Queries */
+        @media (max-width: 768px) {
+            .container {
+                padding: 20px;
+            }
+
+            .form-container {
+                padding: 20px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <h1>Code Academy</h1>
+        <nav>
+            <ul>
+                <li><a href="/">Home</a></li>
+                <li><a href="/courses">Courses</a></li>
+                <li><a href="/enroll">Enroll Now</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <div class="container">
+        <h2>Enroll Now</h2>
+
+        <div class="form-container">
+            <form action="/enrollment" method="POST">
+                <!-- Student Name -->
+                <label for="name">Full Name</label>
+                <input type="text" id="name" name="name" placeholder="Enter your full name" required>
+
+                <!-- Email Address -->
+                <label for="email">Email Address</label>
+                <input type="email" id="email" name="email" placeholder="Enter your email address" required>
+
+                <!-- Phone Number-->
+                <label for="PhoneNumber">Phone Number</label>
+                <input type="tel" id="phone" name="phone" placeholder="Enter your phone Number" required>
+                <!-- Phone Number-->
+                <label for="Password">Password</label>
+                <input type="password" id="password" name="password" placeholder="Enter your password" required>
+
+
+                <!-- Course Selection -->
+                <label for="course">Select Course</label>
+                <select id="course" name="course" required>
+                    <option value="">Select a course</option>
+                    <option value="frontend">Front-End Development</option>
+                    <option value="backend">Back-End Development</option>
+                    <option value="fullstack">Full-Stack Development</option>
+                    <option value="uiux">UI/UX Design</option>
+                </select>
+
+                <!-- Payment Option -->
+                <label for="payment">Learning Method</label>
+                <select id="payment" name="payment" required>
+                    <option value="">Select learning method</option>
+                    <option value="credit_card">Online</option>
+                    <option value="paypal">Physical Onsite Schooling</option>
+                    <option value="bank_transfer">Both School</option>
+                </select>
+
+                <!-- Submit Button -->
+                <button type="submit" class="btn-primary">Submit Enrollment</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer id="contact">
+        <p>&copy; 2024 Code Academy. All Rights Reserved.</p>
+    </footer>
+</body>
+
+</html>

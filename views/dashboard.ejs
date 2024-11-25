@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Dashboard - Code Academy</title>
+    <link rel="stylesheet" href="/css/styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            margin: 0;
+            font-family: 'Poppins', sans-serif;
+            background-color: #f3f4f6;
+            color: #333;
+        }
+
+        header {
+            background: #141527;
+            padding: 20px 50px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: fixed;
+            top: 0;
+            width: 100%;
+            z-index: 1000;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+        }
+
+        header h1 {
+            color: #fff;
+            font-size: 26px;
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            gap: 20px;
+        }
+
+        nav ul li a {
+            color: #fff;
+            text-decoration: none;
+            font-weight: 500;
+            padding: 10px 20px;
+            border-radius: 5px;
+            transition: background 0.3s ease;
+        }
+
+        nav ul li a:hover {
+            background-color: #ff5a5f;
+        }
+
+        .container {
+            margin-top: 120px;
+            padding: 40px 50px;
+        }
+
+        h2 {
+            font-size: 36px;
+            color: #333;
+            margin-bottom: 30px;
+            text-align: center;
+        }
+
+        .dashboard-grid {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 30px;
+        }
+
+        .card {
+            background-color: white;
+            border-radius: 15px;
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.12);
+            width: 350px;
+            padding: 30px;
+            text-align: center;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 12px 35px rgba(0, 0, 0, 0.2);
+        }
+
+        .card h3 {
+            font-size: 24px;
+            color: #333;
+            margin-top: 20px;
+        }
+
+        .card p {
+            font-size: 16px;
+            color: #555;
+            margin-top: 10px;
+        }
+
+        .btn-primary {
+            background-color: #ff5a5f;
+            padding: 12px 30px;
+            border: none;
+            color: white;
+            font-size: 16px;
+            border-radius: 30px;
+            cursor: pointer;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            text-decoration: none;
+            margin-top: 20px;
+            display: inline-block;
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+        }
+
+        /* Sidebar (optional) */
+        .sidebar {
+            background-color: #141527;
+            color: white;
+            padding: 40px 20px;
+            height: 100vh;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 250px;
+            z-index: 999;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .sidebar h2 {
+            color: white;
+            font-size: 22px;
+            margin-bottom: 30px;
+            text-align: center;
+        }
+
+        .sidebar ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .sidebar ul li {
+            margin-bottom: 20px;
+        }
+
+        .sidebar ul li a {
+            color: white;
+            text-decoration: none;
+            font-size: 18px;
+        }
+
+        .sidebar ul li a:hover {
+            color: #ff5a5f;
+        }
+
+        .content {
+            margin-left: 270px;
+            margin-top: 120px;
+            padding: 40px;
+        }
+
+        footer {
+            background-color: #141527;
+            color: white;
+            padding: 40px 0;
+            text-align: center;
+        }
+
+        footer p {
+            font-size: 14px;
+            margin: 0;
+        }
+
+        /* Media Queries */
+        @media (max-width: 768px) {
+            .container {
+                padding: 20px;
+            }
+
+            .card {
+                width: 100%;
+            }
+
+            .sidebar {
+                width: 100%;
+                height: auto;
+                padding: 20px;
+                position: relative;
+            }
+
+            .content {
+                margin-left: 0;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Code Academy</h1>
+        <nav>
+            <ul>
+                <li><a href="/">Home</a></li>
+                <li><a href="/courses">Courses</a></li>
+                <li><a href="/dashboard">Dashboard</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Sidebar -->
+    <div class="sidebar">
+        <h2>Student Dashboard</h2>
+        <ul>
+            <li><a href="/dashboard/my-courses">My Courses</a></li>
+            <li><a href="/dashboard/progress">Progress</a></li>
+            <li><a href="/dashboard/resources">Resources</a></li>
+            <li><a href="/dashboard/settings">Settings</a></li>
+        </ul>
+    </div>
+
+    <!-- Main Content -->
+    <div class="content">
+        <h2>Welcome, [Student Name]!</h2>
+
+        <div class="dashboard-grid">
+            <!-- My Courses Section -->
+            <div class="card">
+                <h3>My Courses</h3>
+                <p>View the courses you’re enrolled in and track your progress.</p>
+                <a href="/dashboard/my-courses" class="btn-primary">View Courses</a>
+            </div>
+
+            <!-- Progress Section -->
+            <div class="card">
+                <h3>Progress</h3>
+                <p>Check your progress in the courses and track completion.</p>
+                <a href="/dashboard/progress" class="btn-primary">View Progress</a>
+            </div>
+
+            <!-- Resources Section -->
+            <div class="card">
+                <h3>Resources</h3>
+                <p>Access materials, lectures, and learning resources.</p>
+                <a href="/dashboard/resources" class="btn-primary">View Resources</a>
+            </div>
+
+            <!-- Settings Section -->
+            <div class="card">
+                <h3>Settings</h3>
+                <p>Update your profile information and adjust account settings.</p>
+                <a href="/dashboard/settings" class="btn-primary">Account Settings</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer id="contact">
+        <p>&copy; 2024 Code Academy. All Rights Reserved.</p>
+    </footer>
+</body>
+</html>

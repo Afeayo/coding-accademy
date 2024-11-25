@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Courses - Code Academy</title>
+    <link rel="stylesheet" href="/css/styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            margin: 0;
+            font-family: 'Poppins', sans-serif;
+            background-color: #f3f4f6;
+            color: #333;
+        }
+        header {
+            background: #141527;
+            padding: 20px 50px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: fixed;
+            top: 0; /* Keep the header at the top */
+            width: 100%; /* Ensure it stretches across the page */
+            z-index: 1000; /* Ensure it stays above other elements */
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+        }
+        header h1 {
+            color: #fff;
+            font-size: 26px;
+        }
+        nav ul {
+            list-style: none;
+            display: flex;
+            gap: 20px;
+        }
+        nav ul li a {
+            color: #fff;
+            text-decoration: none;
+            font-weight: 500;
+            padding: 10px 20px;
+            border-radius: 5px;
+            transition: background 0.3s ease;
+        }
+        nav ul li a:hover {
+            background-color: #ff5a5f;
+        }
+        .container {
+            margin-top: 120px; /* Add margin to ensure content doesn't overlap with the header */
+            padding: 40px 50px;
+        }
+        h2 {
+            font-size: 48px;
+            color: #333;
+            text-align: center;
+            margin-bottom: 50px;
+            font-weight: 600;
+        }
+        .courses-grid {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 30px;
+        }
+        .course-card {
+            background-color: white;
+            border-radius: 15px;
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.12);
+            width: 350px;
+            padding: 30px;
+            text-align: center;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .course-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 12px 35px rgba(0, 0, 0, 0.2);
+        }
+        .course-card img {
+            width: 100%;
+            border-radius: 10px;
+            margin-bottom: 20px;
+        }
+        .course-card h3 {
+            font-size: 28px;
+            margin-top: 10px;
+            color: #333;
+        }
+        .course-card p {
+            font-size: 16px;
+            color: #555;
+            margin-top: 10px;
+        }
+        .btn-primary {
+            background-color: #ff5a5f;
+            padding: 15px 35px;
+            border: none;
+            color: white;
+            font-size: 18px;
+            border-radius: 30px;
+            cursor: pointer;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            text-decoration: none;
+            margin-top: 20px;
+            display: inline-block;
+        }
+        .btn-primary:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+        }
+
+        /* Footer */
+        footer {
+            background-color: #141527;
+            color: white;
+            padding: 40px 0;
+            text-align: center;
+        }
+        footer p {
+            font-size: 14px;
+            margin: 0;
+        }
+
+        /* Media Queries */
+        @media (max-width: 768px) {
+            .container {
+                padding: 20px;
+            }
+            .course-card {
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Code Academy</h1>
+        <nav>
+            <ul>
+                <li><a href="/">Home</a></li>
+                <li><a href="/courses">Courses</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <div class="container">
+        <h2>Our Courses</h2>
+        <div class="courses-grid">
+            <!-- Front-End Development Course -->
+            <div class="course-card">
+                <img src="/images/niitfortesoft.jpg" alt="Front-end Development">
+                <h3>Front-End Development</h3>
+                <p>Master the art of creating beautiful and responsive websites with HTML, CSS, JavaScript, and frameworks like Vue.js and React.</p>
+                <a href="/courses/frontend" class="btn-primary">Enroll Now</a>
+            </div>
+
+            <!-- Back-End Development Course -->
+            <div class="course-card">
+                <img src="/image" alt="Back-end Development">
+                <h3>Back-End Development</h3>
+                <p>Learn how to build powerful and scalable server-side applications with Node.js, Express, and MongoDB.</p>
+                <a href="/courses/backend" class="btn-primary">Enroll Now</a>
+            </div>
+
+            <!-- Full-Stack Development Course -->
+            <div class="course-card">
+                <img src="/images/niitfortesoft.jpg" alt="Full-stack Development">
+                <h3>Full-Stack Development</h3>
+                <p>Become a full-stack developer by learning both front-end and back-end technologies to build complete web applications.</p>
+                <a href="/courses/fullstack" class="btn-primary">Enroll Now</a>
+            </div>
+
+            <!-- UI/UX Design Course -->
+            <div class="course-card">
+                <img src="/images/uiux.jpg" alt="UI/UX Design">
+                <h3>UI/UX Design</h3>
+                <p>Learn how to design intuitive, user-friendly interfaces and create seamless experiences for users.</p>
+                <a href="/courses/uiux" class="btn-primary">Enroll Now</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer id="contact">
+        <p>&copy; 2024 Code Academy. All Rights Reserved.</p>
+    </footer>
+</body>
+</html>
